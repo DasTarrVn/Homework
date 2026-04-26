@@ -1,7 +1,8 @@
 public class Cabbage implements Vegetable {
+    private String type = "Cabbage";
     private double weight = 0.0;
 
     public String getInfo() {
-        return "Weight=" + weight;
+        return "Type" + type + "Weight=" + weight;
     }
 }
