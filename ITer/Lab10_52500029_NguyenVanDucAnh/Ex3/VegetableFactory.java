@@ -6,7 +6,7 @@ public class VegetableFactory {
         if (type.equalsIgnoreCase("Carrot")) {
             return new Carrot();
         }
-        if (type.equalsIgnoreCase("Pumpkin"))
+        if (type.equalsIgnoreCase("Cabbage"))
             return new Pumpkin();
         return null;
     }
