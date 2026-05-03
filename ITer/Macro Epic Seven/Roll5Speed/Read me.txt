@@ -1,0 +1,12 @@
+TÔI K CHỊU TRÁNH NHIỆM GÌ VỀ VIỆC BAN TÀI KHOẢNG HAY MISS GEAR SPEED 5 VÌ BẤT KÌ LÍ DO NÀO.
+Hướng dẫn sử dụng:
+(1920x1080 125% Windows 11)
+*Các độ phân giải khác khi test thì các bạn nhớ đọc dòng đầu tiên của Read me 
+Do SikulixIDE chạy trên nền java nên hãy chắc chắn rằng bạn có cài đặt nó (Btw nếu máy bạn có mc thì cũng đồng nghĩa có java) 
+-B1: Chạy file bat dưới quyền admin.
+-B2: Mở epic seven (bản pc hay giả lập đều được nhưng khuyên là pc do t chưa test bên giả lập) với chế độ full screen và mở sẵn chỗ để đập gear.
+-B3: Alt tap qua phần mềm SikulixIDE được mở sau khi chạy file bat hồi nãy, chú ý rằng cửa sổ game phải nằm ngay dưới phần mềm, 
+Dùng SikulixIDE chọn File > Open > RollSub5Speed.sikuli nằm cùng thư mục nhấn Run ở góc trên bên phải. Sau đó nhấn Run.
+-Chúc mọi người reset vui vẻ-
+Muốn dừng khẩn cấp thì nhấn Alt Shift C 
+PS: Cơ chế cũng chỉ đơn giản là scan ảnh sau đó tự động điều khiển chuột để bấm như bao macro bình thường thôi.
