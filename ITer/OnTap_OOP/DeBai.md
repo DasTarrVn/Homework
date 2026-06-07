@@ -1,7 +1,3 @@
-# Đề Thi Ôn Tập OOP (Dựa trên HW 1-7 và Lab 1-10)
-
-Chào bạn, dựa vào các kiến thức bạn đã học trong các bài tập trước đây (từ các kiểu dữ liệu cơ bản, mảng, chuỗi, đến các tính chất quan trọng của OOP như Kế thừa, Lớp trừu tượng, và Lớp nội - Inner Class), đây là một đề bài tổng hợp để bạn luyện tập cho kỳ thi cuối kỳ:
-
 ## Bài tập: Hệ thống Quản lý Thiết bị Công nghệ
 
 ### Yêu cầu:
