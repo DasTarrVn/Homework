@@ -1,0 +1,230 @@
+================================================================================
+                    TAI LIEU HUONG DAN CHI TIET - LAB 2: STACK & QUEUE
+                     (Cau truc Du lieu va Giai thuat - DH Ton Duc Thang)
+================================================================================
+
+I. TONG QUAN VA CAU TRUC THU MUC
+--------------------------------------------------------------------------------
+Tat ca cac bai tap trong Lab 2 duoc phan chia vao cac thu muc con doc lap trong T2:
+- T2/
+  ├── Lab2.pdf
+  ├── huong_dan_chi_tiet.txt (File tai lieu huong dan nay)
+  ├── Ex1/ : Cai dat Stack ADT, Queue ADT (Generic <E>), Fraction va Main
+  ├── Ex2/ : Tinh bieu thuc P(n) bang de quy va khu de quy bang Stack
+  ├── Ex3/ : Dao nguoc chuoi ky tu bang Stack
+  ├── Ex4/ : Kiem tra tinh can bang cua cac loai ngoac (), [], {} bang Stack
+  ├── Ex5/ : Cai dat Hang doi (Queue) bang hai Ngan xep (Stack)
+  └── Ex6/ : Kiem tra chuoi doi xung (Palindrome) bang 1 Stack va 1 Queue
+
+* Quy uoc ma nguon:
+  Toan bo code Java (.java) trong cac thu muc Ex1 -> Ex6 khong chua comment.
+  Cac noi dung in ra man hinh cmd duoc viet ngan gon, truc quan, khong mau me,
+  su dung tieng Viet khong dau (ngoai tru cac thuat ngu ky thuat nhu enqueue, dequeue,
+  stack, queue, peek, pop, push).
+
+
+================================================================================
+II. NEN TANG LY THUYET VA THIET KE COT LOI (THEO LAB2.PDF)
+================================================================================
+
+1. Ngan xep (Stack - LIFO):
+   - Nguyen tac "Last In, First Out" (Vao sau ra truoc).
+   - Cac thao tac chinh:
+     + push(E item): Them phan tu vao dinh stack (top).
+     + pop(): Lay va xoa phan tu o dinh stack.
+     + getPeek(): Lay phan tu o dinh stack nhung khong xoa.
+     + isEmpty(): Kiem tra stack co rong hay khong.
+     + size(): Tra ve so luong phan tu.
+     + contains(E item): Kiem tra phan tu co ton tai khong.
+     + print(): In cac phan tu tu dinh xuong day.
+
+2. Hang doi (Queue - FIFO):
+   - Nguyen tac "First In, First Out" (Vao truoc ra truoc).
+   - Cac thao tac chinh:
+     + enQueue(E item): Them phan tu vao cuoi hang doi (rear).
+     + deQueue(): Lay va xoa phan tu o dau hang doi (front).
+     + getFront(): Lay phan tu dau tien nhung khong xoa.
+     + isEmpty(): Kiem tra hang doi co rong hay khong.
+     + size(): Tra ve so luong phan tu.
+     + contains(E item): Kiem tra phan tu co ton tai khong.
+     + print(): In cac phan tu tu front den rear.
+
+3. Lop Node<E>:
+   - Don vi luu tru du lieu (element) va lien ket (next).
+   - Cung cap cac constructor va getter/setter cho element va next.
+
+
+================================================================================
+III. CHI TIET CAC BAI TAP (EX1 DEN EX6)
+================================================================================
+
+1. EXERCISE 1 (Ex1)
+- Cac file: Node.java, StackInterface.java, MyStack.java, QueueInterface.java,
+            MyQueue.java, Fraction.java, Main.java.
+- Noi dung: Cai dat MyStack va MyQueue kieu generic <E>, lop Fraction va kiem tra.
+- Lenh chay:
+  cd Ex1
+  javac *.java
+  java Main
+- Ket qua in ra cmd:
+  Stack: 5/6 -> 3/4 -> 1/2
+  Size: 3
+  Peek: 5/6
+  Chua 3/4: true
+  Chua 2/4: true
+  Chua 7/8: false
+  Pop: 5/6
+  Stack: 3/4 -> 1/2
+  Size: 2
+
+  Queue: 1/3 -> 2/5 -> 7/9
+  Size: 3
+  Front: 1/3
+  Chua 2/5: true
+  Chua 1/2: false
+  Dequeue: 1/3
+  Queue: 2/5 -> 7/9
+  Size: 2
+
+--------------------------------------------------------------------------------
+2. EXERCISE 2 (Ex2)
+- De bai: P(n) = 2^n + n^2 + P(n - 1) voi n > 1; P(1) = 3.
+- Cac file: Node.java, StackInterface.java, MyStack.java, Main.java.
+- Giai thuat:
+  + De quy (recurP): Base case n=1 tra ve 3; buoc de quy cong 2^n + n^2 + recurP(n-1).
+  + Khu de quy bang Stack (stackP): Push cac gia tri tu n giam ve 2 vao Stack.
+    Khoi tao result = 3. Pop tung phan tu k va cong don (2^k + k^2).
+- Lenh chay:
+  cd Ex2
+  javac *.java
+  java Main
+- Ket qua in ra cmd:
+  n = 1 | De quy: 3 | Stack: 3 | Khop: true
+  n = 2 | De quy: 11 | Stack: 11 | Khop: true
+  n = 3 | De quy: 28 | Stack: 28 | Khop: true
+  n = 4 | De quy: 60 | Stack: 60 | Khop: true
+  n = 5 | De quy: 117 | Stack: 117 | Khop: true
+  n = 6 | De quy: 217 | Stack: 217 | Khop: true
+
+--------------------------------------------------------------------------------
+3. EXERCISE 3 (Ex3)
+- De bai: Doc chuoi ky tu va in ra theo thu tu dao nguoc bang Stack.
+- Cac file: Node.java, StackInterface.java, MyStack.java, Main.java.
+- Giai thuat: Push lan luot tung ky tu vao Stack, sau do pop ra noi vao chuoi ket qua.
+- Lenh chay:
+  cd Ex3
+  javac *.java
+  java Main
+- Ket qua in ra cmd:
+  Goc: Hello World!
+  Dao nguoc: !dlroW olleH
+
+  Goc: Data Structures and Algorithms
+  Dao nguoc: smhtiroglA dna serutcurtS ataD
+
+  Goc: 123456789
+  Dao nguoc: 987654321
+
+  Goc: Stack Queue
+  Dao nguoc: eueuQ kcatS
+
+--------------------------------------------------------------------------------
+4. EXERCISE 4 (Ex4)
+- De bai: Kiem tra cac loai dau ngoac (), [], {} co can bang khong.
+- Cac file: Node.java, StackInterface.java, MyStack.java, Main.java.
+- Giai thuat:
+  + Gap ngoac mo '(', '[', '{': push vao Stack.
+  + Gap ngoac dong ')', ']', '}': pop tu Stack ra kiem tra co dung cap khong. Neu Stack rong hoac khong khop cap -> false.
+  + Ket thuc chuoi: neu Stack rong -> true, con phan tu -> false.
+- Lenh chay:
+  cd Ex4
+  javac *.java
+  java Main
+- Ket qua in ra cmd:
+  Bieu thuc: {[()]}
+  Can bang: true
+
+  Bieu thuc: {[(])}
+  Can bang: false
+
+  Bieu thuc: ((()))
+  Can bang: true
+
+  Bieu thuc: ())
+  Can bang: false
+
+  Bieu thuc: ([{}])
+  Can bang: true
+
+  Bieu thuc: {[}
+  Can bang: false
+
+  Bieu thuc: a * (b + c) - [d / {e * f}]
+  Can bang: true
+
+  Bieu thuc: a * (b + c) - [d / {e * f)]
+  Can bang: false
+
+--------------------------------------------------------------------------------
+5. EXERCISE 5 (Ex5)
+- De bai: Cai dat Hang doi (Queue) bang 2 Stack.
+- Cac file: Node.java, StackInterface.java, MyStack.java, QueueInterface.java,
+            MyQueue.java, Main.java.
+- Giai thuat:
+  + stack1 dung de enqueue.
+  + stack2 dung de dequeue: neu stack2 rong thi pop toan bo stack1 push sang stack2.
+- Lenh chay:
+  cd Ex5
+  javac *.java
+  java Main
+- Ket qua in ra cmd:
+  Enqueue: 10, 20, 30
+  Queue: 10 20 30 
+  Size: 3
+  Front: 10
+  Chua 20: true
+  Chua 99: false
+  Dequeue: 10
+  Queue: 20 30 
+  Enqueue: 40, 50
+  Queue: 20 30 40 50 
+  Dequeue het:
+  Dequeue: 20
+  Dequeue: 30
+  Dequeue: 40
+  Dequeue: 50
+  Queue rong: true
+
+--------------------------------------------------------------------------------
+6. EXERCISE 6 (Ex6)
+- De bai: Kiem tra chuoi doi xung (Palindrome) bang 1 Stack va 1 Queue.
+- Cac file: Node.java, StackInterface.java, MyStack.java, QueueInterface.java,
+            MyQueue.java, Main.java.
+- Giai thuat:
+  + Chuyen ky tu ve chu thuong, bo dau cau/khoang trang.
+  + Day vao dong thoi ca Stack va Queue.
+  + Pop tu Stack (chieu nguoc) va dequeue tu Queue (chieu xuoi) de so sanh tung cap ky tu.
+- Lenh chay:
+  cd Ex6
+  javac *.java
+  java Main
+- Ket qua in ra cmd:
+  Chuoi: "dad"
+  Doi xung: true
+
+  Chuoi: "A man, a plan, a canal: Panama"
+  Doi xung: true
+
+  Chuoi: "racecar"
+  Doi xung: true
+
+  Chuoi: "hello"
+  Doi xung: false
+
+  Chuoi: "Was it a car or a cat I saw?"
+  Doi xung: true
+
+  Chuoi: "No 'x' in Nixon"
+  Doi xung: true
+
+================================================================================
