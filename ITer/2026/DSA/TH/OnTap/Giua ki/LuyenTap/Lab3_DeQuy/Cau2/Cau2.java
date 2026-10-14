@@ -4,35 +4,34 @@
  * ============================================================
  *
  * Trong lớp Cau2, sinh viên định nghĩa phương thức:
- *   public static int recur(int n, int k)
+ * public static int recur(int n, int k)
  * để giải bài toán sau bằng phương pháp ĐỆ QUY và trả về kết quả.
  *
  * Công thức (tính lũy thừa):
- *   f(n, k) = 1,              nếu k = 0
- *   f(n, k) = n * f(n, k-1), nếu k > 0
+ * f(n, k) = 1, nếu k = 0
+ * f(n, k) = n * f(n, k-1), nếu k > 0
  *
- *   Với n là số nguyên, k là số nguyên và k >= 0
+ * Với n là số nguyên, k là số nguyên và k >= 0
  *
- * Ý nghĩa: f(n, k) = n^k  (n mũ k)
+ * Ý nghĩa: f(n, k) = n^k (n mũ k)
  *
  * Ví dụ kiểm tra:
- *   recur(2, 0) = 1   (2^0 = 1)
- *   recur(2, 1) = 2   (2^1 = 2)
- *   recur(2, 3) = 8   (2^3 = 8)
- *   recur(3, 4) = 81  (3^4 = 81)
- *   recur(5, 2) = 25  (5^2 = 25)
+ * recur(2, 0) = 1 (2^0 = 1)
+ * recur(2, 1) = 2 (2^1 = 2)
+ * recur(2, 3) = 8 (2^3 = 8)
+ * recur(3, 4) = 81 (3^4 = 81)
+ * recur(5, 2) = 25 (5^2 = 25)
  *
  * Sinh viên tự hiện thực trong phương thức main để kiểm tra lại bài làm.
  * Lưu ý phương thức main gây lỗi thì bị 0 điểm cả bài.
  */
 public class Cau2 {
 
-    // TODO: Implement recur(int n, int k) bằng đệ quy
-    // Gợi ý:
-    //   if (k == 0) return 1;
-    //   return n * recur(n, k - 1);
     public static int recur(int n, int k) {
-        return 0; // TODO
+        if (k == 0) {
+            return 1;
+        }
+        return n * recur(n, k - 1);
     }
 
     public static void main(String[] args) {

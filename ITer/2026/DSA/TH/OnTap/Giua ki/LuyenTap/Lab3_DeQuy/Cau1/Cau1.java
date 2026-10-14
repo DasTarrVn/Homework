@@ -4,35 +4,36 @@
  * ============================================================
  *
  * Trong lớp Cau1, sinh viên định nghĩa phương thức:
- *   public static int recur(int n)
+ * public static int recur(int n)
  * để giải bài toán sau bằng phương pháp ĐỆ QUY và trả về kết quả.
  *
  * Công thức:
- *   A(0) = 1
- *   A(1) = 2
- *   A(n) = A(n-1) + 2 * A(n-2) + n,  với n >= 2
+ * A(0) = 1
+ * A(1) = 2
+ * A(n) = A(n-1) + 2 * A(n-2) + n, với n >= 2
  *
- *   Với n là số nguyên và n >= 0
+ * Với n là số nguyên và n >= 0
  *
  * Ví dụ kiểm tra:
- *   recur(0) = 1
- *   recur(1) = 2
- *   recur(2) = A(1) + 2*A(0) + 2 = 2 + 2 + 2 = 6
- *   recur(3) = A(2) + 2*A(1) + 3 = 6 + 4 + 3 = 13
- *   recur(4) = A(3) + 2*A(2) + 4 = 13 + 12 + 4 = 29
+ * recur(0) = 1
+ * recur(1) = 2
+ * recur(2) = A(1) + 2*A(0) + 2 = 2 + 2 + 2 = 6
+ * recur(3) = A(2) + 2*A(1) + 3 = 6 + 4 + 3 = 13
+ * recur(4) = A(3) + 2*A(2) + 4 = 13 + 12 + 4 = 29
  *
  * Sinh viên tự hiện thực trong phương thức main để kiểm tra lại bài làm.
  * Lưu ý phương thức main gây lỗi thì bị 0 điểm cả bài.
  */
 public class Cau1 {
 
-    // TODO: Implement recur(int n) bằng đệ quy
-    // Gợi ý:
-    //   if (n == 0) return 1;
-    //   if (n == 1) return 2;
-    //   return recur(n-1) + 2 * recur(n-2) + n;
     public static int recur(int n) {
-        return 0; // TODO
+        if (n == 0) {
+            return 1;
+        }
+        if (n == 1) {
+            return 2;
+        }
+        return recur(n - 1) + 2 * recur(n - 2) + n;
     }
 
     public static void main(String[] args) {
